@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="bg-blue-500 text-white p-4 flex justify-between">
-      <div className="text-xl font-bold">MyApp</div>
+      <div className="text-xl font-bold">
+        <Link to="/" className="hover:underline">
+            MyApp
+        </Link>
+    </div>
       <ul className="flex space-x-4">
         <li>
           <Link to="/" className="hover:underline">
