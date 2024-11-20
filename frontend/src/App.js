@@ -1,23 +1,16 @@
-// src/App.js
 import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import SignIn from "./pages/SignIn";
-import Register from "./pages/Register";
+import AppNavigator from "./AppNavigator";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="flex flex-col min-h-screen">
         <Navbar />
-        <div className="p-8">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
+        <div className="flex-grow">
+          <AppNavigator />
         </div>
         <Footer />
       </div>
