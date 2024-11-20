@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { loginUser } from "../firebase/auth";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +37,15 @@ const SignIn = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="bg-blue-500 text-white w-full py-2 rounded">Sign In</button>
+        <button className="bg-blue-500 text-white w-full py-2 rounded">
+          Sign In
+        </button>
+        <Link
+          to="/reset-password"
+          className="block text-blue-500 text-center mt-4 hover:underline"
+        >
+          Forgot Password?
+        </Link>
       </form>
     </div>
   );

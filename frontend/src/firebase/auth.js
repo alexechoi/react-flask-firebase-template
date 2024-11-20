@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 // Initialize Firestore
@@ -49,6 +50,16 @@ export const logoutUser = async () => {
   } catch (error) {
     throw new Error("Failed to log out.");
   }
+};
+
+// Reset Password function
+export const resetPassword = async (email) => {
+    try {
+        await sendPasswordResetEmail(auth, email);
+        return "Password reset email sent!";
+    } catch (error) {
+        throw new Error(mapFirebaseError(error.code));
+    }
 };
 
 // Map Firebase errors to user-friendly messages
